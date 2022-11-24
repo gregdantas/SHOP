@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.project.Shop.entity.User;
 import com.project.Shop.repository.UserRepository;
+import com.project.Shop.service.UserService;
 
 @RestController
 @RequestMapping(value = "/shop")
@@ -18,10 +19,12 @@ public class UserResources {
 
 	@Autowired
 	UserRepository repository;
+	@Autowired
+	UserService service ; 
 	
 	@GetMapping(value = "/list")
 	public ResponseEntity<List<User>> list(){
-		return ResponseEntity.status(HttpStatus.OK).body(repository.findAll()) ; 
+		return ResponseEntity.status(HttpStatus.OK).body(service.findALL()) ; 
 	}
 	
 	
