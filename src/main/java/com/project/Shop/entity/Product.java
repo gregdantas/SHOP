@@ -1,6 +1,5 @@
 package com.project.Shop.entity;
 
-import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,24 +14,22 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-
-
 @Getter
 @Setter
 @AllArgsConstructor
-@EqualsAndHashCode
 @NoArgsConstructor
+@EqualsAndHashCode
 @Entity
-@Table(name ="TBL_CATEGORY")
-public class Category implements Serializable {
-	private static final long serialVersionUID = 1L;
+@Table(name = "TBL_PRODUCT")
+public class Product {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id; 
+	private Integer id ; 
 	private String name ; 
-
-	private Set<Product> products = new HashSet<>() ; 
+	private String description ; 
+	private String imgUrl ; 
+	private Double preco ; 
+	
+	private Set <Category> categories = new HashSet<>() ; 
 }
-
-
