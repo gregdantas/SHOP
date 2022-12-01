@@ -11,14 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.Shop.entity.Product;
-import com.project.Shop.entity.User;
 import com.project.Shop.repository.ProductsRepository;
-import com.project.Shop.repository.UserRepository;
 import com.project.Shop.service.ProductService;
-import com.project.Shop.service.UserService;
 
 @RestController
-@RequestMapping(value = "/ Product")
+@RequestMapping(value = "/products")
 public class ProductsResources {
 
 	@Autowired
@@ -26,7 +23,7 @@ public class ProductsResources {
 	@Autowired
 	 ProductService service ; 
 	
-	@GetMapping(value = "/list")
+	@GetMapping
 	public ResponseEntity<List< Product>> list(){
 		return ResponseEntity.status(HttpStatus.OK).body(service.findALL()) ; 
 	}

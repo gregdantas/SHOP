@@ -26,7 +26,7 @@ public class CategoryResources {
 	@Autowired
 	ServiceCategories service ; 
 	
-	@GetMapping(value = "/all")
+	@GetMapping
 	public ResponseEntity<List<Category>> list(){
 		return ResponseEntity.status(HttpStatus.OK).body(service.findALL()) ; 
 	

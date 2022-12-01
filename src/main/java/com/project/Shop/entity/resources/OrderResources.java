@@ -23,7 +23,7 @@ public class OrderResources {
 	@Autowired
 	OrderService service ; 
 	
-	@GetMapping(value = "/list")
+	@GetMapping
 	public ResponseEntity<List<Order>> list(){
 		return ResponseEntity.status(HttpStatus.OK).body(service.findALL()) ; 
 	}
